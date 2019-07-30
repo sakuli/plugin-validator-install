@@ -2,9 +2,10 @@
   "name": "@sakuli/plugin-validator",
   "version": "1.0.0",
   "description": "Install package for Sakulis plugin validator.",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,8 @@
   },
   "keywords": [
     "n-api",
-    "c++"
+    "c++",
+    "meta"
   ],
   "author": {
     "name": "Simon Hofmann",
@@ -29,7 +31,6 @@
     "@sakuli/plugin-validator-win32": "^1.0.0-beta3"
   },
   "devDependencies": {
-    "@types/node": "^12.6.8",
-    "typescript": "^3.5.3"
+    "jest": "^24.8.0"
   }
 }
