@@ -1,0 +1,20 @@
+os: linux
+dist: xenial
+
+language: node_js
+node_js:
+  - "10"
+cache: npm
+
+script:
+  - npm run build
+
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: npm publish --access public
+    on:
+      tags: true
