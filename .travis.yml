@@ -1,13 +1,16 @@
-os: linux
-dist: xenial
-
 language: node_js
-node_js:
-  - "10"
 cache: npm
 
-script:
-  - npm run build
+matrix:
+  include:
+    - os: linux
+      dist: bionic
+      node_js: "lts/dubnium"
+    - os: osx
+      osx_image: xcode11
+      node_js: "lts/dubnium"
+    - os: windows
+      node_js: "lts/dubnium"
 
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
@@ -18,3 +21,4 @@ deploy:
     script: npm publish --access public
     on:
       tags: true
+      condition: $TRAVIS_OS_NAME = "linux"
