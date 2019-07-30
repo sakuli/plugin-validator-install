@@ -1,0 +1,6 @@
+.travis.yml
+.vscode
+.idea
+src
+tsconfig.json
+tsconfig.tsbuildinfo
