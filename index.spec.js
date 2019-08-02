@@ -23,12 +23,12 @@ describe("PluginValidator", () => {
 
 describe("PluginValidator-E2E", () => {
     it.each`
-    msg                     | pluginToken                                                                                                                                                                                                                                     | userToken                                                                                                                                                                                                                                                                    | expected
-    ${"Category matches"}   | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfcGx1Z2luIiwiYXVkIjoiQHNha3VsaS90ZXN0X3BsdWdpbiIsImNhdGVnb3J5IjoxfQ.RftqaToo4xPb-pmNL52nFqOKynWML3rLyaeAlEKvSVIYv1hmx20TbkXzlntO1jOHvIDhwZLOjNYGI2UNIANl1Q"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${false}
-    ${"Category missmatch"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfcGx1Z2luIiwiYXVkIjoiQHNha3VsaS90ZXN0X3BsdWdpbiIsImNhdGVnb3J5IjoyfQ.sTba90drmg2MkVi5oqSKmDf8IdSxA3VUEyTiLcxW455dFt6b0GmXfv-jSzMX5hD5iFThYjrcnE5KzO_RdmbIjw"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${true}
-    ${"Inclusive category"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfcGx1Z2luIiwiYXVkIjoiQHNha3VsaS90ZXN0X3BsdWdpbiIsImNhdGVnb3J5IjozfQ.lO1qiOp51KlaZm_pX-NW-0D4h5IiMKBfv6208BORO0qe7HEsSMO9I74WJNrG4i6ksvISCU2EFLEFdE-xd6oVvA"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${false}
-    ${"UserToken empty"}    | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfcGx1Z2luIiwiYXVkIjoiQHNha3VsaS90ZXN0X3BsdWdpbiIsImNhdGVnb3J5IjoxfQ.RftqaToo4xPb-pmNL52nFqOKynWML3rLyaeAlEKvSVIYv1hmx20TbkXzlntO1jOHvIDhwZLOjNYGI2UNIANl1Q"} | ${""}                                                                                                                                                                                                                                                                        | ${true}
-    ${"PluginToken empty"}  | ${""}                                                                                                                                                                                                                                           | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${true}
+    msg                     | pluginToken                                                                                                                                                                                                                                                           | userToken                                                                                                                                                                                                                                                                    | expected
+    ${"Category matches"}   | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjYXRlZ29yeSI6MSwiaWF0IjoxNTY0NzQ3MjI4LCJhdWQiOiJAc2FrdWxpL3Rlc3RfcGx1Z2luIiwiaXNzIjoic2FrdWxpLmlvIiwic3ViIjoic2FrdWxpX3BsdWdpbiJ9.Nesw1WORjmGQkgMHDR29L7MKlMYKNGdHlbVNL9JZx1ge4wpffDPJt-LwGAxrI8MJDXh_f9dh0Orhj3RCC1vlGw"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${false}
+    ${"Category missmatch"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjYXRlZ29yeSI6MiwiaWF0IjoxNTY0NzQ3NDMyLCJhdWQiOiJAc2FrdWxpL3Rlc3RfcGx1Z2luIiwiaXNzIjoic2FrdWxpLmlvIiwic3ViIjoic2FrdWxpX3BsdWdpbiJ9.QFGsqr4BVer5OQvcMlUNNjMH05nXVTcGYuvivTs10omxsGGqRqWsWGD4heqOYvRsBErc7TUtGGuK-c7VI_8ssQ"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${true}
+    ${"Inclusive category"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjYXRlZ29yeSI6MywiaWF0IjoxNTY0NzQ3NDY3LCJhdWQiOiJAc2FrdWxpL3Rlc3RfcGx1Z2luIiwiaXNzIjoic2FrdWxpLmlvIiwic3ViIjoic2FrdWxpX3BsdWdpbiJ9.Ap-ArpcjfH6DtP-hQC63-WoMdJt9HYd-Xj0DeNRh6Ep-UUGpnFM75jNmkUCfGmDj58VZoGNX_LHSlJXjbVDuMA"} | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${false}
+    ${"UserToken empty"}    | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjYXRlZ29yeSI6MywiaWF0IjoxNTY0NzQ3NDY3LCJhdWQiOiJAc2FrdWxpL3Rlc3RfcGx1Z2luIiwiaXNzIjoic2FrdWxpLmlvIiwic3ViIjoic2FrdWxpX3BsdWdpbiJ9.Ap-ArpcjfH6DtP-hQC63-WoMdJt9HYd-Xj0DeNRh6Ep-UUGpnFM75jNmkUCfGmDj58VZoGNX_LHSlJXjbVDuMA"} | ${""}                                                                                                                                                                                                                                                                        | ${true}
+    ${"PluginToken empty"}  | ${""}                                                                                                                                                                                                                                                                 | ${"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ"} | ${true}
   `("$msg throws: $expected", ({ msg, pluginToken, userToken, expected }) => {
         // GIVEN
         const validator = new PluginValidator("@sakuli/test_plugin");
@@ -45,6 +45,36 @@ describe("PluginValidator-E2E", () => {
                 validator.verifyPlugin({ pluginToken }, userToken)
             ).toThrow();
         }
+    });
+
+    it("should throw on missing package name", () => {
+        // GIVEN
+        const validator = new PluginValidator();
+        const userToken =
+            "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ";
+        const pluginToken =
+            "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfcGx1Z2luIiwiYXVkIjoiQHNha3VsaS90ZXN0X3BsdWdpbiIsImNhdGVnb3J5IjoxfQ.RftqaToo4xPb-pmNL52nFqOKynWML3rLyaeAlEKvSVIYv1hmx20TbkXzlntO1jOHvIDhwZLOjNYGI2UNIANl1Q";
+
+        // WHEN
+
+        // THEN
+        expect(() =>
+            validator.verifyPlugin({ pluginToken }, userToken)
+        ).toThrowError(
+            "Plugin UNKNOWN_PACKAGE provided invalid token: @sakuli/test_plugin"
+        );
+    });
+
+    it("should only validate plugins with token", () => {
+        // GIVEN
+        const validator = new PluginValidator();
+        const userToken =
+            "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ";
+
+        // WHEN
+
+        // THEN
+        expect(() => validator.verifyPlugin({}, userToken)).not.toThrowError();
     });
 
     it("should throw on missing plugin audience", () => {
@@ -67,7 +97,7 @@ describe("PluginValidator-E2E", () => {
 
     it("should throw on invalid plugin audience", () => {
         // GIVEN
-        const packageName = "@sakuli/wrong_package"
+        const packageName = "@sakuli/wrong_package";
         const validator = new PluginValidator(packageName);
         const userToken =
             "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzYWt1bGkuaW8iLCJzdWIiOiJzYWt1bGlfdXNlciIsImNhdGVnb3J5IjoxLCJuYmYiOjE1NjQwNDA4ODcsImV4cCI6MTcyMjA4NzIzMywiYXVkIjoia3VuZGUwODE1In0.CrU7CXpDr62lreHFV7FtkQvXsgQ0vmNS8xYvX5sjcxaOtBIFNaiAg60GKmKP72nMmYnMuzOEIJUW5eSpAbeKYQ";
