@@ -3,6 +3,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.2.0
+
+- Updated packages:
+```
+"@sakuli/plugin-validator-darwin": "2.2.0"
+"@sakuli/plugin-validator-linux": "2.2.0"
+"@sakuli/plugin-validator-win32": "2.2.0"
+```
+
 ## v1.1.0
 
 - Updated typings
