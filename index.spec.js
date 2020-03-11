@@ -65,9 +65,7 @@ describe("PluginValidator-E2E Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError(
-            "Plugin UNKNOWN_PACKAGE provided invalid token: @sakuli/test_plugin"
-        );
+        ).toThrowError();
     });
 
     it("should only validate plugins with token", () => {
@@ -95,9 +93,7 @@ describe("PluginValidator-E2E Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError(
-            "Plugin UNKNOWN_PACKAGE provided invalid token: @sakuli/test_plugin"
-        );
+        ).toThrowError();
     });
 
     it("should throw on invalid plugin audience", () => {
@@ -114,9 +110,7 @@ describe("PluginValidator-E2E Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError(
-            `Plugin ${packageName} provided invalid token: @sakuli/test_plugin`
-        );
+        ).toThrowError();
     });
 
     it("should throw on license category missmatch", () => {
@@ -132,9 +126,7 @@ describe("PluginValidator-E2E Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError(
-            "Token missmatch. userToken category 1 does not match pluginToken category 4"
-        );
+        ).toThrowError();
     });
 
     it("should throw due to invalid license category", () => {
@@ -150,7 +142,7 @@ describe("PluginValidator-E2E Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError("Invalid token category: 100");
+        ).toThrowError();
     });
 });
 
@@ -168,7 +160,7 @@ describe("Timestamps Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError("token expired");
+        ).toThrowError();
     });
 
     it("should throw due to immature token", () => {
@@ -184,7 +176,7 @@ describe("Timestamps Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError("immature signature");
+        ).toThrowError();
     });
 
     it("should throw due to missing 'exp' timestamp", () => {
@@ -200,7 +192,7 @@ describe("Timestamps Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError("Missing 'exp' timestamp");
+        ).toThrowError();
     });
 
     it("should throw due to missing 'nbf' timestamp", () => {
@@ -216,7 +208,7 @@ describe("Timestamps Plugins", () => {
         // THEN
         expect(() =>
             validator.verifyPlugin({pluginToken}, userToken)
-        ).toThrowError("Missing 'nbf' timestamp");
+        ).toThrowError();
     });
 });
 
@@ -261,9 +253,7 @@ describe("PluginValidator-E2E Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError(
-            "Container UNKNOWN_ENVIRONMENT provided invalid token: consol/sakuli"
-        );
+        ).toThrowError();
     });
 
     it("should throw on invalid audience", () => {
@@ -280,9 +270,7 @@ describe("PluginValidator-E2E Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError(
-            `Container ${packageName} provided invalid token: consol/sakuli`
-        );
+        ).toThrowError();
     });
 
     it("should throw on license category missmatch", () => {
@@ -298,9 +286,7 @@ describe("PluginValidator-E2E Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError(
-            "Token missmatch. userToken category 1 does not match containerToken category 14"
-        );
+        ).toThrowError();
     });
 
     it("should throw due to invalid license category", () => {
@@ -316,7 +302,7 @@ describe("PluginValidator-E2E Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError("Invalid token category: 100");
+        ).toThrowError();
     });
 });
 
@@ -334,7 +320,7 @@ describe("Timestamps Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError("token expired");
+        ).toThrowError();
     });
 
     it("should throw due to immature token", () => {
@@ -350,7 +336,7 @@ describe("Timestamps Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError("immature signature");
+        ).toThrowError();
     });
 
     it("should throw due to missing 'exp' timestamp", () => {
@@ -366,7 +352,7 @@ describe("Timestamps Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError("Missing 'exp' timestamp");
+        ).toThrowError();
     });
 
     it("should throw due to missing 'nbf' timestamp", () => {
@@ -382,6 +368,6 @@ describe("Timestamps Environment", () => {
         // THEN
         expect(() =>
             validator.verifyEnvironment(containerToken, userToken)
-        ).toThrowError("Missing 'nbf' timestamp");
+        ).toThrowError();
     });
 });
