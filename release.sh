@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e -o pipefail
 
 function help() {
     echo "Usage: sh release.sh <RELEASE_VERSION>"
@@ -20,6 +21,9 @@ git checkout -b release/${RELEASE_VERSION} origin/develop
 
 printf "\n%s\n"  "Change Version in package.json"
 npm version ${RELEASE_VERSION} --no-git-tag-version
+npm i --save-exact @sakuli/plugin-validator-darwin@${RELEASE_VERSION}
+npm i --save-exact @sakuli/plugin-validator-linux@${RELEASE_VERSION}
+npm i --save-exact @sakuli/plugin-validator-win32@${RELEASE_VERSION}
 
 printf "\n%s\n" "Run npm i"
 npm i
@@ -27,7 +31,7 @@ npm i
 printf "\n%s\n"  "Run npm audit fix"
 npm audit fix
 
-printf "\n\n%s "  "Would you like to commit and push these changes? (y/n)"
+printf "\n\n%s "  "Please update the changelog before continuing. Would you like to commit and push these changes? (y/n)"
 read CHANGE_CONFIRMATION
 [[ ! "${CHANGE_CONFIRMATION}" == "y" ]] && exit 1
 
