@@ -10,7 +10,7 @@ jobs:
     name: release-version
     strategy:
       matrix:
-        os: [ ubuntu-20.04, macOs-latest, windows-latest ]
+        os: [ ubuntu-latest, macOs-latest, windows-latest ]
         node: [ 10, 12, 14 ]
     runs-on: ${{ matrix.os }}
     steps:
