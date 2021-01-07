@@ -14,12 +14,13 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-20.04, macOs-latest, windows-latest ]
+        node: [ 10, 12, 14 ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14
+      - name: Use Node.js {{ matrix.os }}
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: {{ matrix.os }}
       - run: npm ci
       - run: npm t -- --runInBand --ci --bail
