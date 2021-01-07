@@ -1,6 +1,9 @@
 .travis.yml
+.github
 .vscode
 .idea
 src
 tsconfig.json
 tsconfig.tsbuildinfo
+release.sh
+index.spec.js
