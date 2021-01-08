@@ -1,0 +1,28 @@
+name: release-version
+
+on:
+  push:
+    tags:
+      - v*.*.*
+
+jobs:
+  release-version:
+    name: release-version
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macOs-latest, windows-latest ]
+        node: [ 10, 12, 14 ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js {{ matrix.os }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm t -- --runInBand --ci --bail
+      - name: publish packages
+        if: runner.os == 'Linux'
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

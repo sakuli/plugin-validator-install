@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  push:
+    branches-ignore:
+      - "master"
+      - "develop"
+      - "release/**"
+  pull_request:
+
+jobs:
+  test:
+    name: test
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, macOs-latest, windows-latest ]
+        node: [ 10, 12, 14 ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js {{ matrix.os }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm t -- --runInBand --ci --bail

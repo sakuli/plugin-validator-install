@@ -3,6 +3,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## Upcoming release
+
+- Maintenance: Move plugin validator install to GitHub Actions [(#8)](https://github.com/sakuli/plugin-validator-install/issues/8)
+
 ## v2.4.0
 
 - Updated packages:
