@@ -3,6 +3,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.5.1
+- preparing security release
+- Updated packages:
+```
+"@sakuli/plugin-validator-darwin": "2.5.1"
+"@sakuli/plugin-validator-linux": "2.5.1"
+"@sakuli/plugin-validator-win32": "2.5.1"
+```
+
+
 ## v2.5.0
 
 - Maintenance: Move plugin validator install to GitHub Actions [(#8)](https://github.com/sakuli/plugin-validator-install/issues/8)

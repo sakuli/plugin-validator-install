@@ -1,6 +1,6 @@
 {
   "name": "@sakuli/plugin-validator",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Install package for Sakulis plugin validator.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/sakuli/plugin-validator-install#readme",
   "dependencies": {
-    "@sakuli/plugin-validator-darwin": "2.5.0",
-    "@sakuli/plugin-validator-linux": "2.5.0",
-    "@sakuli/plugin-validator-win32": "2.5.0"
+    "@sakuli/plugin-validator-darwin": "2.5.1",
+    "@sakuli/plugin-validator-linux": "2.5.1",
+    "@sakuli/plugin-validator-win32": "2.5.1"
   },
   "devDependencies": {
     "jest": "^26.6.3"
